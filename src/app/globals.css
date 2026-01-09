@@ -1,30 +1,57 @@
 @import "tailwindcss";
-
-/* 사용자 정의 테마 설정 
-  Tailwind v4부터는 @theme 블록 안에서 변수를 연결할 수 있습니다.
-*/
-@theme {
-  /* 색상 이름 등록 (예: class="bg-brown" 또는 "text-olive"로 사용 가능) */
-  --color-base: var(--bg-base);
-  --color-text-base: var(--text-base);
-  --color-brown: var(--brown);
-  --color-olive: var(--olive);
-  --color-light: var(--light-bg);
-}
-
-/* 기본 CSS 변수 선언 */
 :root {
-  --bg-base: #F8F5F2;    /* 배경색 */
-  --text-base: #1F1F1F;  /* 기본 글자색 */
-  --brown: #A67B5B;      /* 포인트 브라운 */
-  --olive: #708238;      /* 포인트 올리브 */
-  --light-bg: #F5EFE6;   /* 밝은 배경색 */
+    /* 배경: 쨍한 흰색이 아닌 아주 연한 크림 */
+    --bg-base: #FFFCF9; 
+    
+    /* 텍스트: 검정이 아닌 짙은 웜 브라운 */
+    --text-primary: #5A4D41; 
+    --text-secondary: #8C7B6C;
+
+    /* 카드 배경: 두 가지 톤으로 나뉩니다 */
+    --card-bg-light: #FFFEFC; /* 메인 캔버스 같은 밝은 곳 */
+    --card-bg-sand: #F2E8D9;  /* 비디오, 프로필 쪽 짙은 베이지 */
+    
+    /* 핵심 포인트: 테두리와 버튼 */
+    --border-color: #E6DCCF;  /* 카드 테두리 색상 */
+    --accent-olive: #737C56;  /* Edit Canvas 버튼 색 */
+    --accent-brown: #A67B5B;  /* ownplot 로고 톤 */
+    
+    /* 포스트잇 포인트 */
+    --postit-yellow: #F0E0AB;
+    --postit-orange: #F2C999;
+}
+@theme {
+  /* 따뜻한 모노톤 & 어스 톤 (Earth Tones) 
+    - bg-base: 전체 배경 (따뜻한 모래색)
+    - bg-paper: 카드 배경 (크림 화이트)
+    - text-main: 기본 글자 (부드러운 검정)
+    - border-line: 테두리 선 (연한 회색)
+    - bg-accent: 포인트 (차분한 카키/그레이)
+  */
+  --color-base: #F2F0EB;
+  --color-paper: #FFFCF8;
+  --color-main: #2C2C2C;
+  --color-muted: #858585;
+  --color-line: #D6D2C8;
+  --color-accent: #6B665F; 
+  --color-olive: #606C38; /* 채도를 낮춘 올리브 */
+  --color-brown: #BC6C25; /* 따뜻한 브라운 포인트 */
+  /* 사진에서 추출한 고유 색상 등록 */
+  --color-own-bg: #F8F5F2;
+  --color-own-brown: #A67B5B;
+  --color-own-text: #5A4D41;
+  --color-own-olive: #737C56;
+  --color-own-border: #E6DCCF;
+
+  /* 폰트 설정 */
+  --font-serif: "DM Serif Display", serif;
 }
 
-/* 기본 바디 스타일 적용 */
+/* 기본 설정 */
 body {
-  background-color: var(--bg-base);
-  color: var(--text-base);
+  background-color: var(--color-base);
+  color: var(--color-main);
   font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden; /* 캔버스 앱처럼 화면 스크롤 방지 */
+  /* 아주 은은한 노이즈 텍스처를 줘서 종이 질감 내기 */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
 }

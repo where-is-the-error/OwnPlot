@@ -1,15 +1,16 @@
+// src/app/components/Header.tsx
 export default function Header() {
   return (
-    <header className="mb-12 flex justify-between items-start w-full">
-      <div>
-        <h1 className="text-4xl font-serif italic font-bold tracking-tighter">ownplot.</h1>
-        <p className="text-[10px] text-white/30 uppercase tracking-[0.3em] mt-1 text-center">Digital Garden</p>
-      </div>
-      <div className="flex gap-4 items-center">
-        <button className="text-xs uppercase tracking-widest text-white/50 hover:text-white transition-colors">Explore</button>
-        <div className="w-10 h-10 rounded-full border border-white/10 bg-gradient-to-br from-stone-800 to-black flex items-center justify-center overflow-hidden">
-          <div className="w-4 h-4 bg-plot-olive rounded-full blur-[2px] animate-pulse" />
-        </div>
+    <header className="mb-10 w-full px-2 py-6">
+      <div className="max-w-[1400px] mx-auto">
+        {/* 텍스트 크기와 폰트를 사진 느낌에 맞춰 조정 */}
+        <h1 className="text-6xl font-serif text-own-brown lowercase tracking-tight">
+          ownplot.
+        </h1>
+        {/* 설명 문구는 필요에 따라 유지하거나 삭제하세요 */}
+        <p className="text-sm text-own-text/60 mt-2 ml-1">
+          나만의 작은 디지털 텃밭 🌿
+        </p>
       </div>
     </header>
   );

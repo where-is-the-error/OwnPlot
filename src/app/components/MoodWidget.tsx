@@ -1,29 +1,18 @@
 import PlotCard from "./PlotCard";
 
+// src/app/components/MoodWidget.tsx
 export default function MoodWidget() {
-  const moods = [
-    { emoji: "🌱", label: "Calm" },
-    { emoji: "✨", label: "Creative" },
-    { emoji: "☁️", label: "Dreamy" },
-    { emoji: "🌊", label: "Flow" }
-  ];
-
   return (
     <PlotCard title="Real-time Mood">
-      <div className="flex justify-between items-center py-2">
-        {moods.map((mood) => (
-          <button 
-            key={mood.label}
-            className="group/mood relative flex flex-col items-center gap-2"
-          >
-            <span className="text-2xl grayscale group-hover/mood:grayscale-0 transition-all duration-300 hover:scale-125">
-              {mood.emoji}
-            </span>
-            <span className="text-[8px] uppercase tracking-tighter opacity-0 group-hover/mood:opacity-40 transition-opacity">
-              {mood.label}
-            </span>
-          </button>
-        ))}
+      <div className="flex flex-col items-center justify-center gap-4">
+        {/* LP판 크기를 적절하게 조절 */}
+        <div className="w-32 h-32 rounded-full bg-own-text border-[8px] border-white shadow-xl flex items-center justify-center animate-spin-slow">
+          <div className="w-10 h-10 rounded-full bg-[#E53935] border-2 border-white" />
+        </div>
+        <div className="text-center">
+          <h4 className="text-lg font-bold text-own-text">Lo-Fi Garden Beats</h4>
+          <p className="text-xs text-own-text/40 uppercase tracking-widest mt-1">Relaxed</p>
+        </div>
       </div>
     </PlotCard>
   );
