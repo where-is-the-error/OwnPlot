@@ -6,16 +6,16 @@
   --color-plot-brown: #A67B5B;
   --color-plot-olive: #708238;
   --color-plot-light: #F5EFE6;
-  
-  --font-serif: "Times New Roman", serif;
 }
 
 :root {
-  --background: #000000;
+  --background: #0a0a0a;
   --foreground: #ffffff;
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
+  background-image: radial-gradient(circle, #ffffff10 1px, transparent 1px);
+  background-size: 40px 40px;
 }

@@ -1,56 +1,35 @@
 "use client";
-import { useState } from "react";
 
-export default function LandingPage() {
-  const [nickname, setNickname] = useState("");
-  const [isAvailable, setIsAvailable] = useState<boolean | null>(null);
+import Header from "./components/Header";
+import VideoWidget from "./components/VideoWidget";
+import CanvasWidget from "./components/CanvasWidget";
+import PostItWidget from "./components/PostItWidget";
+import MoodWidget from "./components/MoodWidget";
 
-  const handleCheckNickname = (val: string) => {
-    setNickname(val);
-    if (val.length > 2) {
-      setIsAvailable(val.length % 2 === 0);
-    } else {
-      setIsAvailable(null);
-    }
-  };
-
+export default function MainPage() {
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6 selection:bg-white selection:text-black">
-      <header className="absolute top-10 left-10">
-        <h1 className="text-2xl font-serif italic font-bold tracking-tighter">ownplot.</h1>
-      </header>
+    <div className="min-h-screen p-8 md:p-16 max-w-[1600px] mx-auto">
+      {/* 1. 상단 헤더 */}
+      <Header />
 
-      <main className="w-full max-w-2xl text-center space-y-12">
-        <div className="space-y-4">
-          <h2 className="text-5xl md:text-7xl font-serif leading-tight">
-            Your space,<br /> <span className="italic">finely crafted.</span>
-          </h2>
-          <p className="text-stone-500 font-light text-lg">당신만의 정갈한 땅을 점유하고, 이야기를 심으세요.</p>
-        </div>
+      {/* 2. 벤토 그리드 레이아웃 */}
+      <main className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-fr">
+        {/* 왼쪽: 비디오 위젯 */}
+        <VideoWidget />
 
-        <div className="relative group">
-          <div className="flex items-center justify-center text-2xl md:text-4xl font-light border-b border-stone-800 pb-4 group-focus-within:border-white transition-colors">
-            <span className="opacity-30 mr-2">ownplot.so/</span>
-            <input
-              type="text"
-              value={nickname}
-              onChange={(e) => handleCheckNickname(e.target.value)}
-              placeholder="nickname"
-              className="bg-transparent outline-none w-48 md:w-64 placeholder:text-stone-800"
-            />
-          </div>
-          <div className="h-8 mt-4">
-            {nickname.length > 0 && isAvailable === true && <p className="text-sm text-green-500">✓ 이 땅은 비어있습니다.</p>}
-            {nickname.length > 0 && isAvailable === false && <p className="text-sm text-red-500">✕ 이미 누군가 가꾸고 있는 땅입니다.</p>}
-          </div>
-        </div>
+        {/* 중앙: 메인 캔버스 (2칸 차지) */}
+        <CanvasWidget />
 
-        <div className={`transition-all duration-700 ${nickname.length > 2 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <button className="bg-white text-black px-12 py-4 rounded-full font-semibold hover:bg-stone-200">
-            Get My Plot
-          </button>
+        {/* 오른쪽: 소셜 정보 (포스트잇 & 무드) */}
+        <div className="flex flex-col gap-6">
+          <PostItWidget />
+          <MoodWidget />
         </div>
       </main>
+
+      <footer className="mt-20 text-center opacity-20">
+        <p className="text-[10px] uppercase tracking-[0.5em]">© 2026 ownplot. all rights reserved.</p>
+      </footer>
     </div>
   );
 }
