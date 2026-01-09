@@ -21,8 +21,10 @@ export default function MainPage() {
         <CanvasWidget />
 
         {/* 오른쪽: 소셜 정보 (포스트잇 & 무드) */}
-        <PostItWidget />
-        <MoodWidget />
+        <div className="flex flex-col gap-6">
+          <PostItWidget />
+          <MoodWidget />
+        </div>
       </main>
 
       <footer className="mt-20 text-center opacity-20">

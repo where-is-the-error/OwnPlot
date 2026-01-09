@@ -1,21 +1,30 @@
 @import "tailwindcss";
 
+/* 사용자 정의 테마 설정 
+  Tailwind v4부터는 @theme 블록 안에서 변수를 연결할 수 있습니다.
+*/
 @theme {
-  --color-plot-bg: #F8F5F2;
-  --color-plot-text: #1F1F1F;
-  --color-plot-brown: #A67B5B;
-  --color-plot-olive: #708238;
-  --color-plot-light: #F5EFE6;
+  /* 색상 이름 등록 (예: class="bg-brown" 또는 "text-olive"로 사용 가능) */
+  --color-base: var(--bg-base);
+  --color-text-base: var(--text-base);
+  --color-brown: var(--brown);
+  --color-olive: var(--olive);
+  --color-light: var(--light-bg);
 }
 
+/* 기본 CSS 변수 선언 */
 :root {
-  --background: #0a0a0a;
-  --foreground: #ffffff;
+  --bg-base: #F8F5F2;    /* 배경색 */
+  --text-base: #1F1F1F;  /* 기본 글자색 */
+  --brown: #A67B5B;      /* 포인트 브라운 */
+  --olive: #708238;      /* 포인트 올리브 */
+  --light-bg: #F5EFE6;   /* 밝은 배경색 */
 }
 
+/* 기본 바디 스타일 적용 */
 body {
-  background-color: var(--background);
-  color: var(--foreground);
-  background-image: radial-gradient(circle, #ffffff10 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-color: var(--bg-base);
+  color: var(--text-base);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: hidden; /* 캔버스 앱처럼 화면 스크롤 방지 */
 }
