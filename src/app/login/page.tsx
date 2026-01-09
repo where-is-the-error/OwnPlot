@@ -16,6 +16,8 @@ export default function LoginPage() {
   // 로그인/회원가입 처리 함수
   const handleAuth = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("입력한 이메일:", email); 
+    console.log("입력한 비번:", password);
     setLoading(true);
     setMessage('');
 
