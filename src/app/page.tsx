@@ -13,7 +13,7 @@ export default function MainPage() {
       <Header />
 
       {/* 2. 벤토 그리드 레이아웃 */}
-      <main className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-fr">
+      <main className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-fr">
         {/* 왼쪽: 비디오 위젯 */}
         <VideoWidget />
 
