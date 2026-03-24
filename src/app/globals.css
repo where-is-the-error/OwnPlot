@@ -1,4 +1,6 @@
 @import "tailwindcss";
+
+
 :root {
     /* 배경: 쨍한 흰색이 아닌 아주 연한 크림 */
     --bg-base: #FFFCF9; 
@@ -21,6 +23,11 @@
     --postit-orange: #F2C999;
 }
 @theme {
+  --color-own-bg: #F8F5F2;
+  --color-own-text: #1F1F1F;
+  --color-own-brown: #A67B5B;
+  --color-own-olive: #708238;
+  --color-own-light: #F5EFE6;
   /* 따뜻한 모노톤 & 어스 톤 (Earth Tones) 
     - bg-base: 전체 배경 (따뜻한 모래색)
     - bg-paper: 카드 배경 (크림 화이트)
@@ -49,6 +56,7 @@
 
 /* 기본 설정 */
 body {
+  
   background-color: var(--color-base);
   color: var(--color-main);
   font-family: Arial, Helvetica, sans-serif;

@@ -1,6 +1,3 @@
-
-"use client";
-
 // src/app/page.tsx
 import Header from "../components/Header";
 import VideoWidget from "../components/VideoWidget";

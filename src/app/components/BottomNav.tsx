@@ -1,6 +1,6 @@
 export default function BottomNav() {
   return (
-    <nav className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
+    <nav className="fixed bottom-10 left-1/2 -translate-x-1/2 z-99999 bg-red-500 p-2">
       <div className="bg-white border-[1.2px] border-own-brown rounded-full px-12 py-3 flex items-center gap-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
         
         <button className="flex flex-col items-center gap-1 group transition-transform hover:scale-110">
